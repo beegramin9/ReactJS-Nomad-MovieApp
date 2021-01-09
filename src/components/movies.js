@@ -1,12 +1,20 @@
 /* 개별 movie를 render하는 파일 */
 import React from "react";
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types";
 import './movies.css'
 
 
 /* movie는 state가 필요 없기때문에 component 클래스를 사용하지 않아도 된다. */
-function Movie({year, title, summary, poster, genres}) {
+function Movie({id, year, title, summary, poster, genres}) {
     return (
+    <Link to={{
+        pathname:`./movie/${id}`,
+        state: {
+            /* ES6 */
+            year, title, summary, poster, genres
+        }
+    }}>  
         <div className="movie">
             <img src={poster} alt={title} title={title}></img>
             <div className="movie_data">
@@ -24,7 +32,8 @@ function Movie({year, title, summary, poster, genres}) {
                 <p className="movie__summary">{summary.slice(0, 140)}</p>
             </div>
         </div>
-        )
+    </Link>   
+    )
 }
 
 /* React 컴포넌트의 propTypes 속성 
