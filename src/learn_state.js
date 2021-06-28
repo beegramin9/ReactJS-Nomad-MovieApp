@@ -6,7 +6,8 @@ import React from 'react';
 App 클래스는 state라는 method를 가지고 있기 때문에 사용한다. */
 class App extends React.Component {
   /* React.Component는 render method를 가진 부모 클래스 
-  App 클래스는 Component를 상속받았으므로 얘도 render method를 가짐 */
+  App 클래스는 Component를 상속받았으므로 얘도 render method를 가짐 
+  함수가 아니라서 return이 없다 */
   
 
   /* constructor는 JS에서 클래스를 만들 때 호출되는
