@@ -11,16 +11,10 @@ The current stable version is v0.0.1.
 <Food fav="kimchi" 
       something={true}
       papapa={['hello',1,2,3,4]}/>;
-              {/* HTML과 매우 비슷한 구조 
-        name은 prop이라 하고, kimchi는 value라고 함
-        true나 array는 JS의 요소이기 때문에 {}로 감싸준다.        
-        Food에서는 요 prop들을 받아서 Food(props), 즉 파라미터로 받는다.
-      */}
+      /* The structure above quite resembles HTML and how HTML containing class is constructed. 
+          The class-resembling elements are called 'props' as in properties.
+          HTML code is writen without braces, JS code such as array, boolean is writen within braces.*/
 ```
-The structure above quite resembles HTML and how HTML containing class is constructed. <br>
-The class-resembling elements are called 'props' as in properties. <br>
-HTML code is writen without braces, JS code such as array, boolean is writen within braces. <br>
-
 - Proptypes<br>
 Runtime type checking for React props and similar objects<br>
 ```js
