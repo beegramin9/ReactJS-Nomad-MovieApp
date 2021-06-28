@@ -33,66 +33,25 @@ Food.propTypes = {
 
 - Destructuring <br>
 ```js
-const developer = {
-    firstName: 'Nathan',
-    lastName: 'Sebhastian',
-    developer: true,
-    age: 25,
-}
- 
-const { firstName : name} = developer;
-/* deconstruct object 'developer', allocate key 'firstName' to variable 'name' 
-variable 'name' returns now the value of the key 'firstName', string 'Nathan' */
-
-const { firstName, lastName } = developer;
-/* deconstruct as same process as above, not allocating them to any variables 
-keys 'firstName', 'lastName' return the values, 'Nathan', 'Sebhastian'*/
-
-/* Array */
-const numbers = [1,2,3,4,5];
-const [zero, one] = numbers;
-/* allocate index-accordingly
-zero = numbers[0], 
-one = numbers[1] */
-
-
-/* can skip through certain keys using , */
-const [first, second, , fourth] = numbers
-
-
-/* React에서 state를 해체할당 할 때 자주 쓰인다. */
 state = {
     name: 'Wontae',
     email: 'beestron9@gmail.com'
 }
 
-reactFunction = () => {
+let reactFunction = () => {
     const {name, email} = state
-    /* state 객체를 분해했다.
-    name으로만 써도 state.name이 됨
-    그런데 변수가 state객체의 key와 같다면
-    name : name, email : email 이렇게 쓰지 않고
-    그냥 name, email 해도 알아먹음 */
+    /* deconstruct state, not allocating them to any variables 
+    keys 'name', 'email' return the values, 'Wontae', 'beestron9@gmail.com'*/
 }
 
 props = {
-    hello : 'hello'
-}
-/* 원래같았으면 이렇게 쓰겠지만 */
-let HelloWorld = (props) => {
-    // return <h1>{props.hello}</h1>
-    console.log(`${props.hello}`);
+      hello: 'hello
 }
 
-HelloWorld(props)
-/* 분해하면? */
-let SecondWorld = ({hello}) => {
-    /* 위 같이 쓰려면 {hello} = props이 맞겠지만
-    React에서는 App 부모클래스에서 Food를 줄 때 props를 주는 것이 정해져 있기 때문이다 */
-    // return <h1>{hello}, second.</h1>
-    console.log(`${hello}, second.`);
+let renderComponent = ({hello}) => {
+    console.log(`render ${hello}`);
 }
-SecondWorld(props)
+
 ```
 
 
