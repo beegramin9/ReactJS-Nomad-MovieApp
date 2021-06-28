@@ -6,7 +6,7 @@ This is to announce the completion of making an movie list app with ReactJS. Thi
 The current stable version is v0.0.1.
 
 # Overview
-Proptypes
+- Proptypes
 ```javascript
 Food.propTypes = {
   name: PropTypes.string.isRequired,
