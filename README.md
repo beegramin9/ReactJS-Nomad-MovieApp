@@ -54,13 +54,13 @@ console.log(lastName); // returns 'Sebhastian'
 console.log(developer); // returns the object
 
 
-/* 배열(Array)에도 적용 가능 */
+/* Array */
 const numbers = [1,2,3,4,5];
 const [zero, one] = numbers;
-/* 인덱스 순서대로 뽑아내겠다.
-numbers[0], numbers[1] 이 값들을 zero, one 이라는 변수에 넣겠다 */
-console.log(zero);
-console.log(one);
+/* allocate index-accordingly
+zero = numbers[0], 
+one = numbers[1] */
+
 
 /* , 사용해서 중간 인덱스 건너 뛰고 분해 할당 가능 */
 const [first, second, , fourth] = numbers
