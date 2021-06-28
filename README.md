@@ -45,7 +45,7 @@ let reactFunction = () => {
 }
 
 props = {
-      hello: 'hello
+      hello: 'hello'
 }
 
 let renderComponent = ({hello}) => {
