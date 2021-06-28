@@ -2,10 +2,18 @@
 
 ![Generic badge](https://img.shields.io/badge/build-passing-green.svg)
 
-This is to announce the completion of making an movie list app with ReactJS.
+This is to announce the completion of making an movie list app with ReactJS. This app runs through the basics of React.
 The current stable version is v0.0.1.
 
 # Overview
+Proptypes
+```javascript
+Food.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  rating: PropTypes.number
+} 
+```
 
 
 # Technology Stack
