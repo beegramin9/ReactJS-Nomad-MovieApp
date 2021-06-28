@@ -73,7 +73,8 @@ let renderComponent = ({hello}) => {
 }
 
 ```
-
+- About State, <br>
+can find some reference at learn_state.js, src
 
 # Technology Stack
 
