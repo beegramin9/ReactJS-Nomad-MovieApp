@@ -2,10 +2,77 @@
 
 ![Generic badge](https://img.shields.io/badge/build-passing-green.svg)
 
-This is to announce the completion of making an movie list app with ReactJS.
+This is to announce the completion of making an movie list app with ReactJS. This app runs through the basics of React.
 The current stable version is v0.0.1.
 
 # Overview
+- Component<br>
+Function that returns JSX, a combination of HTML and JS
+``` js
+/* function App() contains the fathers of all father components, frome which branches the whole application upwards */
+function App() { 
+  return <Food>
+  </Food>
+  /* Food also can have many child components, working as if routers. */
+}
+
+```
+
+```js
+function Food({fav, name, picture, rating}) {
+/* receiving properties from father component */
+  return (
+    <div>
+      <h1>I like {fav}</h1>
+      <h2>I like {name}</h2>
+      <img src={picture} alt={name} />
+      <h4>{rating}/5.0</h4>
+    </div>
+  )
+  /* Any JS code such as array, boolean is writen within braces. HTML code is writen without braces.*/
+}
+```
+
+- Props, Properties
+```js
+<Food fav="kimchi" 
+      something={true}
+      papapa={['hello',1,2,3,4]}/>;
+      /* The structure above quite resembles HTML and how HTML containing class is constructed. 
+          The class-resembling elements are called 'props' as in properties. */
+```
+- Proptypes<br>
+Runtime type checking for React props and similar objects<br>
+```js
+Food.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  rating: PropTypes.number
+} 
+```
+
+- Destructuring <br>
+```js
+state = {
+    name: 'Wontae',
+    email: 'beestron9@gmail.com'
+}
+
+let reactFunction = () => {
+    const {name, email} = state
+    /* deconstruct state, not allocating them to any variables 
+    keys 'name', 'email' return the values, 'Wontae', 'beestron9@gmail.com'*/
+}
+
+props = {
+      hello: 'hello'
+}
+
+let renderComponent = ({hello}) => {
+    console.log(`render ${hello}`);
+}
+
+```
 
 
 # Technology Stack
