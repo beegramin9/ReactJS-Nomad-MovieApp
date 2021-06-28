@@ -7,6 +7,7 @@ The current stable version is v0.0.1.
 
 # Overview
 - Component<br>
+Function that returns JSX, a combination of HTML and JS
 ```js
 <Food fav="kimchi" 
       something={true}
