@@ -15,7 +15,7 @@ ReactDOM.render(
     이러한 JS와 HTML의 조합을 JSX라고 한다.
 
     그러면 새로운 component를 어떻게 만들 수 있을까?
-    1_propTypes.js가 새로운 컴포넌트를 만들었던 과정 
+    learn_component, props, prop-types.js가 새로운 컴포넌트를 만들었던 과정 
     */
   document.getElementById('root')
 );

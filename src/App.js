@@ -1,17 +1,14 @@
 import React from "react"
 import {HashRouter, Route} from "react-router-dom";
-import About from "./routes/About"
-import Home from "./routes/Home"
-import Detail from "./routes/Detail"
-import Navigation from "./components/Navigation"
+import About from "./routes/About";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+import Navigation from "./components/Navigation";
 
 function App() {
   /* 라우터를 return에 넣어준다. */
   return <HashRouter>
-    {/* 모든 라우터들은 기본적으로 props를 받아온다.
-     */}
-
-
+    {/* 모든 라우터들은 기본적으로 props를 받아온다.*/}
 
 
     {/* 모든 페이지에 있어야 하는 Navigation */}

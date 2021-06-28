@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 import './movies.css'
 
 
-/* movie는 state가 필요 없기때문에 component 클래스를 사용하지 않아도 된다. */
+/* movie는 state가 필요 없기때문에, 즉 뭔가 변하지 않는다.
+component 클래스를 사용하지 않아도 된다. */
 function Movie({id, year, title, summary, poster, genres}) {
     return (
     <Link to={{

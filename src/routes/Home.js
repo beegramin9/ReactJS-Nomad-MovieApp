@@ -45,11 +45,8 @@ class Home extends React.Component {
 
   }
   componentDidMount() {
-    setTimeout( ()=> {
-      this.setState({isLoading: false})
-    },3000)
     /* render가 처음 실행될 때 data를 fetch함. 보통 fetch()를 사용하긴 하는데
-    axios() 사용할거임. axios는 fetch가 땅콩이면 겉의 초콜릿임
+    axios() 사용할거임
     data 가져오는게 완료됐으면 그 데이터를 render할 거임 */
 
     /* YTS.com 의 API를 사용할 것
@@ -62,8 +59,7 @@ class Home extends React.Component {
   render () {
     const {isLoading} = this.state
     /* return 안의 괄호 안 코드는 JS 코드라 그랬지?
-    근데 this.state 계속 써야하나? 귀찮노
-    ES6코드 */
+    근데 this.state 계속 써야하나? 귀찮노 */
     /* object 해체하는 방법임
     아마 state에 isLoading 하나밖에 없기 때문에 가능한 것으로 보임 
     변수를 설정하려면 당연히 return 밖에서 해야겠지 */
@@ -77,11 +73,10 @@ class Home extends React.Component {
         {isLoading ? 
         <div className="loader">
           <span className="loader__txt">Loading...</span>
-          {/* father __ child 관계 표현 */}
-        </div> : 
+        </div>:
+
         <div className="movies">
           {movies.map(movie => {
-          console.log(movie);
           return <Movie 
           /* key 요소가 있어야 한대 */
           key={movie.id} 
