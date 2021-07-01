@@ -57,13 +57,12 @@ class Home extends React.Component {
 
 
   render () {
-    const {isLoading} = this.state
+    const {isLoading, movies} = this.state
     /* return 안의 괄호 안 코드는 JS 코드라 그랬지?
     근데 this.state 계속 써야하나? 귀찮노 */
     /* object 해체하는 방법임
     아마 state에 isLoading 하나밖에 없기 때문에 가능한 것으로 보임 
     변수를 설정하려면 당연히 return 밖에서 해야겠지 */
-    const {movies} = this.state
 
 
     /* html의 class와 JS의 class가 겹치기 때문에 className 

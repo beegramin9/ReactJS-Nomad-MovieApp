@@ -9,17 +9,19 @@ import './movies.css'
 component 클래스를 사용하지 않아도 된다. */
 function Movie({id, year, title, summary, poster, genres}) {
     return (
-    <Link to={{
-        pathname:`./movie/${id}`,
+        /* 전체를 Link로 감아서 각 movie의 디테일로 갈 수 있도록 */
+    <Link to={
+        /* props를 준거야, object처럼 생겼잖아 */
+        {pathname:`./movie/${id}`,
         state: {
             /* ES6 */
             year, title, summary, poster, genres
         }
-    }}>  
+    }} className="anchor">  
         <div className="movie">
             <img src={poster} alt={title} title={title}></img>
-            <div className="movie_data">
-                <h3 className="movie__title ">{title}</h3>
+            <div className="movie__data">
+                <h3 className="movie__title">{title}</h3>
                 <ul className="movie__genres ">
                     {genres.map( (genre, index) => {
                         /* 같은 클래스 요소가 여러개 있으면 리액트에서는 id마냥 key를 달라고 함
@@ -29,8 +31,8 @@ function Movie({id, year, title, summary, poster, genres}) {
                 </ul>
                 <h3 className="movie__year ">{year}</h3>
                 {/* summary 텍스트가 너무 기니까 좀 자르자!
-                summary는 array로 들어오는데 얘를 어떻게 자를까? */}
-                <p className="movie__summary">{summary.slice(0, 140)}</p>
+                summary는 string으로 들어오는데 얘를 어떻게 자를까? */}
+                <p className="movie__summary">{summary.slice(0, 140)}...</p>
             </div>
         </div>
     </Link>   
