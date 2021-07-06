@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types";
 import './movies.css'
 
+import { MovieCard, MovieImg, MovieDataSet, MovieTitle, 
+    MovieGenreList, MovieGenre, MovieYear, MovieSummary } from './MovieStyle';
 
 /* movie는 state가 필요 없기때문에, 즉 뭔가 변하지 않는다.
 component 클래스를 사용하지 않아도 된다. */
@@ -18,23 +20,19 @@ function Movie({id, year, title, summary, poster, genres}) {
             year, title, summary, poster, genres
         }
     }} className="anchor">  
-        <div className="movie">
-            <img src={poster} alt={title} title={title}></img>
-            <div className="movie__data">
-                <h3 className="movie__title">{title}</h3>
-                <ul className="movie__genres ">
-                    {genres.map( (genre, index) => {
-                        /* 같은 클래스 요소가 여러개 있으면 리액트에서는 id마냥 key를 달라고 함
-                        JS map에는 python의 enumerate처럼 index를 얻을 수 있는 기능 있음 */
-                        return <li key={index} className="genres__genre">{genre}</li>
-                    })}
-                </ul>
-                <h3 className="movie__year ">{year}</h3>
-                {/* summary 텍스트가 너무 기니까 좀 자르자!
-                summary는 string으로 들어오는데 얘를 어떻게 자를까? */}
-                <p className="movie__summary">{summary.slice(0, 140)}...</p>
-            </div>
-        </div>
+        <MovieCard>
+            <MovieImg src={poster} alt={title} title={title}/>
+            <MovieDataSet>
+                <MovieTitle>{title}</MovieTitle>
+                <MovieGenreList>
+                {genres.map ( (genre, index) => (
+                    <MovieGenre key={index}>{genre}</MovieGenre>
+                ))}
+                </MovieGenreList>
+                <MovieYear>{year}</MovieYear>
+                <MovieSummary>{summary.slice(0, 140)}...</MovieSummary>
+            </MovieDataSet>
+        </MovieCard>
     </Link>   
     )
 }
