@@ -7,28 +7,25 @@ import { usePagination } from "../hooks/usePagination";
 import { Section } from "../styles/GlobalComponents/SectionStyle";
 import ReactPaginate from "react-paginate";
 
-/* hook은 항상 최상위에 있어야 하니까 이걸 working하게 만드려면 파일을 나눠야 한다 */
+/* hook은 항상 최상위에 있어야 하니까 이걸 working하게 만드려면 파일을 나눠야 한다, pagination이라는 컴포넌트 사용 */
 function Home() {
   const URL = "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
  
+  // 한번에 다하려고하면 안되고, movie Data를 useState로 따로 해주고 
   const  {isFullyLoaded, fetchedData, error} = useAxios(URL)
+
+
+  // 얘네를 try catch로 해가지고, catch일때 화면에 loading이 뜨게 하는거야. 어때?
+  
   if (isFullyLoaded) {
     const {data: {data: {movies : totalMovieList}}}= fetchedData
-    const {currentMovieList, totalCountOfPage, changePage} = usePagination(totalMovieList);
-    /* <ReactPaginate 
-        previousLabel={"<<"}  
-        nextLabel={">>"}
-        pageCount={totalCountOfPage}
-        onPageChange={changePage}
-        containerClassName={"paginationButtion"}
-        previousLinkClassName={"previousButton"}
-        nextLinkClassName={"nextButton"}
-        disabledClassName={"paginationDiabled"}
-        activeClassName={"paginationActive"}/> */
+    console.log(totalMovieList)
+    // const {currentMovieList, totalCountOfPage, changePage} = usePagination(totalMovieList);
+  
 
     return (
       <Section grid row>
-        {currentMovieList.map(movie => {
+        {/* {currentMovieList.map(movie => {
           return <Movie 
           key={movie.id} 
           id={movie.id} 
@@ -37,8 +34,8 @@ function Home() {
           summary={movie.summary} 
           genres={movie.genres} 
           poster={movie.medium_cover_image} />
-        })}
-        <ReactPaginate 
+        })} */}
+        {/* <ReactPaginate 
         previousLabel={"<<"}  
         nextLabel={">>"}
         pageCount={totalCountOfPage}
@@ -47,7 +44,7 @@ function Home() {
         previousLinkClassName={"previousButton"}
         nextLinkClassName={"nextButton"}
         disabledClassName={"paginationDiabled"}
-        activeClassName={"paginationActive"}/>
+        activeClassName={"paginationActive"}/> */}
       </Section>
     )
   }

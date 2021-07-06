@@ -1,7 +1,18 @@
 import { useEffect, useState } from "react";
+import defaultAxios from "axios";
 
-export const usePagination = (totalMovieList) => {
+export const useMovieFetchAndPagination = (options, axiosInstance = defaultAxios) => {
+    const [totalMovieList, setTotalMovieList] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
+
+    useEffect( ()=>{
+        const fetchMovieData = async () => {
+            const response = await axiosInstance(options)
+            const {data: {data: {movies : totalMovieList}}}= response
+            setTotalMovieList(totalMovieList)
+        }
+        fetchMovieData();
+    }, [])
 
     const numOfMoviePerPage = 10
     const numOfMovieDisplayed = pageNumber * numOfMoviePerPage

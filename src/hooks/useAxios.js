@@ -10,12 +10,14 @@ export const useAxios = (options, axiosInstance = defaultAxios) => {
         error: null
     })
     useEffect( ()=>{
-        /* Promise */
+        /* Hook은 항상 컴포넌트 최상위(the top of level)에서 호출되어야만 합니다. 
+        만약에 조건부로 effect를 실행하기를 원한다면, 조건문을 Hook 내부에 넣을 수 있습니다. */
         axiosInstance(options).then(data => {
-            setState({...state, isFullyLoaded: true, fetchedData: data})
+            setState({...state, isFullyLoaded:true, fetchedData: data})
         }).catch(error => {
-            setState({...state, isFullyLoaded: true, error: error})
-        }) 
+            setState({...state, isFullyLoaded:true, error: error})
+        })
+
     }, [])
     
     return {...state};
