@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import defaultAxios from "axios";
 
-export const useMovieFetchAndPagination = (options, axiosInstance = defaultAxios) => {
+export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultAxios) => {
     const [totalMovieList, setTotalMovieList] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
 
@@ -14,7 +14,7 @@ export const useMovieFetchAndPagination = (options, axiosInstance = defaultAxios
         fetchMovieData();
     }, [])
 
-    const numOfMoviePerPage = 10
+    const numOfMoviePerPage = 4
     const numOfMovieDisplayed = pageNumber * numOfMoviePerPage
 
     const currentMovieList = totalMovieList.slice(numOfMovieDisplayed, numOfMovieDisplayed+numOfMoviePerPage)

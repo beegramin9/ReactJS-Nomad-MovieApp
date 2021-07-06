@@ -1,25 +1,17 @@
 /* 개별 movie를 render하는 파일 */
 import React from "react";
-import { Link } from "react-router-dom"
 import PropTypes from "prop-types";
-import './movies.css'
-
+import { StyledLink } from "../../styles/GlobalComponents/LinkStyle";
 import { MovieCard, MovieImg, MovieDataSet, MovieTitle, 
     MovieGenreList, MovieGenre, MovieYear, MovieSummary } from './MovieStyle';
 
-/* movie는 state가 필요 없기때문에, 즉 뭔가 변하지 않는다.
-component 클래스를 사용하지 않아도 된다. */
 function Movie({id, year, title, summary, poster, genres}) {
     return (
         /* 전체를 Link로 감아서 각 movie의 디테일로 갈 수 있도록 */
-    <Link to={
-        /* props를 준거야, object처럼 생겼잖아 */
-        {pathname:`./movie/${id}`,
-        state: {
-            /* ES6 */
-            year, title, summary, poster, genres
-        }
-    }} className="anchor">  
+    <StyledLink to={ {pathname:`./movie/${id}`,
+                    /* props를 준거야, object처럼 생겼잖아 */
+                    state: {year, title, summary, poster, genres} /* ES6 */
+        }}>  
         <MovieCard>
             <MovieImg src={poster} alt={title} title={title}/>
             <MovieDataSet>
@@ -33,7 +25,7 @@ function Movie({id, year, title, summary, poster, genres}) {
                 <MovieSummary>{summary.slice(0, 140)}...</MovieSummary>
             </MovieDataSet>
         </MovieCard>
-    </Link>   
+    </StyledLink>   
     )
 }
 

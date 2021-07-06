@@ -1,45 +1,46 @@
 /* 라우팅: 메인 페이지를 보여주는 파일 */
-import React, { useLayoutEffect } from "react";
-import './Home.css';
-import Movie from '../components/Movie/Movie';
-import { useAxios } from "../hooks/useAxios";
-import { useMovieFetchAndPagination } from "../hooks/usePagination";
-import { Section } from "../styles/GlobalComponents/SectionStyle";
-import ReactPaginate from "react-paginate";
+import React from "react";
 
-/* hook은 항상 최상위에 있어야 하니까 이걸 working하게 만드려면 파일을 나눠야 한다, pagination이라는 컴포넌트 사용 */
+import Movie from '../components/Movie/Movie';
+import { useFetchMovieAndMakePagination } from "../hooks/useFetchMovieAndMakePagination";
+import { Section, MovieListSection, PaginationSection } from "../styles/GlobalComponents/SectionStyle";
+import ReactPaginate from "react-paginate";
+import '../styles/GlobalComponents/PaginationStyle.css'
+// import { StyledPagination} from "../styles/GlobalComponents/PaginationStyle"
+
 function Home() {
   const URL = "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
- 
-  // 한번에 다하려고하면 안되고, movie Data를 useState로 따로 해주고 
-  const  {currentMovieList, totalCountOfPage, changePage} = useMovieFetchAndPagination(URL)
+  const  {currentMovieList, totalCountOfPage, changePage} = useFetchMovieAndMakePagination(URL)
 
 
-  // 얘네를 try catch로 해가지고, catch일때 화면에 loading이 뜨게 하는거야. 어때?
-  
+  // loading도 받아와서 loading일때는 부트스트랩 로딩 아이콘을 가져와서 쓸 수 있도록 해보자
 
   return (
       <Section grid row>
-        {currentMovieList.map(movie => {
-          return <Movie 
-          key={movie.id} 
-          id={movie.id} 
-          year={movie.year} 
-          title={movie.title} 
-          summary={movie.summary} 
-          genres={movie.genres} 
-          poster={movie.medium_cover_image} />
-        })}
-        <ReactPaginate 
-        previousLabel={"<<"}  
-        nextLabel={">>"}
-        pageCount={totalCountOfPage}
-        onPageChange={changePage}
-        containerClassName={"paginationButtion"}
-        previousLinkClassName={"previousButton"}
-        nextLinkClassName={"nextButton"}
-        disabledClassName={"paginationDiabled"}
-        activeClassName={"paginationActive"}/>
+        <MovieListSection>
+          {currentMovieList.map(movie => {
+            return <Movie 
+            key={movie.id} 
+            id={movie.id} 
+            year={movie.year} 
+            title={movie.title} 
+            summary={movie.summary} 
+            genres={movie.genres} 
+            poster={movie.medium_cover_image} />
+          })}
+        </MovieListSection>
+        <PaginationSection>
+          <ReactPaginate 
+          previousLabel={"<<"}  
+          nextLabel={">>"}
+          pageCount={totalCountOfPage}
+          onPageChange={changePage}
+          containerClassName={"paginationButton"}
+          previousLinkClassName={"previousButton"}
+          nextLinkClassName={"nextButton"}
+          disabledClassName={"paginationDiabled"}
+          activeClassName={"paginationActive"}/>
+        </PaginationSection>
       </Section>
     )
 }

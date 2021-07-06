@@ -1,13 +1,4 @@
 import styled from "styled-components"
-import { Link } from 'react-router-dom';
-
-export const StyledLink = styled(Link)`
-    text-decoration: none;
-
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: none;
-    }
-`
 
 export const HeaderContainer = styled.div`
     display: grid;
@@ -41,6 +32,7 @@ export const Div2 = styled.div`
 `
 export const Div3 = styled.div`
   position: relative;
+  right: 25px;
   bottom: 2.5px;
   grid-area: 1 / 8 / 2 / 9;
   display: flex;
@@ -49,7 +41,8 @@ export const Div3 = styled.div`
   padding: 0 1rem;
 `;
 
-export const Span = styled.div`
+export const Span = styled.span`
+    font: ${props => props.theme.fonts.title};
     padding-left: .2em;
     font-size: 2rem;
     color: white;

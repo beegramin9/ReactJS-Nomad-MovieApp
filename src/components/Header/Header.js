@@ -1,5 +1,6 @@
 import React from "react";
-import { HeaderContainer, Div1, Div2, Div3, Span ,SocialIcons, StyledLink} from "./HeaderStyle";
+import { HeaderContainer, Div1, Div2, Div3, Span ,SocialIcons} from "./HeaderStyle";
+import { StyledLink } from "../../styles/GlobalComponents/LinkStyle";
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { RiMovie2Fill } from 'react-icons/ri';
 
