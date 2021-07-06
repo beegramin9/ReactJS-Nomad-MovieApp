@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from "react";
 import './Home.css';
 import Movie from '../components/Movie/Movie';
 import { useAxios } from "../hooks/useAxios";
-import { usePagination } from "../hooks/usePagination";
+import { useMovieFetchAndPagination } from "../hooks/usePagination";
 import { Section } from "../styles/GlobalComponents/SectionStyle";
 import ReactPaginate from "react-paginate";
 
@@ -12,20 +12,15 @@ function Home() {
   const URL = "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
  
   // 한번에 다하려고하면 안되고, movie Data를 useState로 따로 해주고 
-  const  {isFullyLoaded, fetchedData, error} = useAxios(URL)
+  const  {currentMovieList, totalCountOfPage, changePage} = useMovieFetchAndPagination(URL)
 
 
   // 얘네를 try catch로 해가지고, catch일때 화면에 loading이 뜨게 하는거야. 어때?
   
-  if (isFullyLoaded) {
-    const {data: {data: {movies : totalMovieList}}}= fetchedData
-    console.log(totalMovieList)
-    // const {currentMovieList, totalCountOfPage, changePage} = usePagination(totalMovieList);
-  
 
-    return (
+  return (
       <Section grid row>
-        {/* {currentMovieList.map(movie => {
+        {currentMovieList.map(movie => {
           return <Movie 
           key={movie.id} 
           id={movie.id} 
@@ -34,8 +29,8 @@ function Home() {
           summary={movie.summary} 
           genres={movie.genres} 
           poster={movie.medium_cover_image} />
-        })} */}
-        {/* <ReactPaginate 
+        })}
+        <ReactPaginate 
         previousLabel={"<<"}  
         nextLabel={">>"}
         pageCount={totalCountOfPage}
@@ -44,16 +39,9 @@ function Home() {
         previousLinkClassName={"previousButton"}
         nextLinkClassName={"nextButton"}
         disabledClassName={"paginationDiabled"}
-        activeClassName={"paginationActive"}/> */}
+        activeClassName={"paginationActive"}/>
       </Section>
     )
-  }
-  
-  return (
-    <Section>
-          Loading...
-    </Section>
-  )
 }
 /* {arrayOfMovieData.map(movie => {
   return <Movie 
