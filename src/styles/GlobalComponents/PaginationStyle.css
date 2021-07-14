@@ -31,11 +31,11 @@ export const StyledPagination = styled(ReactPaginate)`
  */
 
 .paginationButton {
-  width: 80%;
+  width: 100%;
   height: 40px;
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .paginationButton a {
@@ -43,16 +43,16 @@ export const StyledPagination = styled(ReactPaginate)`
   margin: 8px;
   border-radius: 5px;
   border: 1px solid white;
-  color:white;
+  color: white;
   cursor: pointer;
 }
 
 .paginationButton a:hover {
   color: white;
-  background-color: #2b2eff;
+  background-color: rgb(84, 86, 90);
 }
 
 .paginationActive a {
   color: white;
-  background-color: #2b2eff;
+  background-color: rgb(84, 86, 90);
 }

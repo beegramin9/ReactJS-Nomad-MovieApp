@@ -36,17 +36,6 @@ function Header() {
                     fromNavigation : true
                 }
             }}></StyledLink>
-            <Div3>
-                <SocialIcons href="https://github.com/beegramin9/ReactJS-Nomad-MovieApp">
-                    <AiFillGithub size="3rem"/>
-                </SocialIcons>
-                <SocialIcons href="https://linkedin.com/in/wontae-choi-917259209">
-                  <AiFillLinkedin size="3rem"/>
-                </SocialIcons>
-                <SocialIcons href="https://instagram.com/beestron9">
-                  <AiFillInstagram size="3rem"/>
-                </SocialIcons>
-            </Div3>
         </HeaderContainer>
         )
 

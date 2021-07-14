@@ -6,6 +6,7 @@ import About from "./routes/AboutTheProject";
 import Home from "./routes/Main";
 import Detail from "./routes/MovieDetail";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/GlobalStyle";
 import theme from "./themes/default";
@@ -26,6 +27,7 @@ function App() {
       {/* /home과 /home/1이 겹치는걸 막으려면 exact url 아니면 안 띄운다는 뜻의 exact={true} 주면 됨 */}
       <Route path="/about" exact={true} component={About}/>
       <Route path="/movie/:id" exact={true} component={Detail}/>
+      <Footer/>
     </HashRouter>
   </ThemeProvider>
 )}

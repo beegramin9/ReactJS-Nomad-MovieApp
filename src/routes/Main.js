@@ -3,7 +3,9 @@ import React from "react";
 
 import Movie from '../components/Movie/Movie';
 import { useFetchMovieAndMakePagination } from "../hooks/useFetchMovieAndMakePagination";
-import { Section, MovieListSection, PaginationSection } from "../styles/GlobalComponents/SectionStyle";
+import { Section, MainCardSection, 
+  IntroductionSection, ProfileImage, ProfileTextSection, ProfileTextTitle, ProfileTextContent,
+  MovieSection,  MovieListSection, PaginationSection } from "../styles/GlobalComponents/SectionStyle";
 import ReactPaginate from "react-paginate";
 import '../styles/GlobalComponents/PaginationStyle.css'
 // import { StyledPagination} from "../styles/GlobalComponents/PaginationStyle"
@@ -16,31 +18,44 @@ function Home() {
   // loading도 받아와서 loading일때는 부트스트랩 로딩 아이콘을 가져와서 쓸 수 있도록 해보자
 
   return (
+    
+
       <Section grid row>
-        <MovieListSection>
-          {currentMovieList.map(movie => {
-            return <Movie 
-            key={movie.id} 
-            id={movie.id} 
-            year={movie.year} 
-            title={movie.title} 
-            summary={movie.summary} 
-            genres={movie.genres} 
-            poster={movie.medium_cover_image} />
-          })}
-        </MovieListSection>
-        <PaginationSection>
-          <ReactPaginate 
-          previousLabel={"<<"}  
-          nextLabel={">>"}
-          pageCount={totalCountOfPage}
-          onPageChange={changePage}
-          containerClassName={"paginationButton"}
-          previousLinkClassName={"previousButton"}
-          nextLinkClassName={"nextButton"}
-          disabledClassName={"paginationDiabled"}
-          activeClassName={"paginationActive"}/>
-        </PaginationSection>
+        <MainCardSection>
+          <IntroductionSection>
+            <ProfileImage src="/images/profile.jpg" alt="picture of Wontae smiling"/>
+            <ProfileTextSection>
+              <ProfileTextTitle>Wontae's Moive Archive</ProfileTextTitle>
+              <ProfileTextContent>Where content should be</ProfileTextContent>
+            </ProfileTextSection>
+          </IntroductionSection>
+          <MovieSection>
+            <MovieListSection>
+              {currentMovieList.map(movie => {
+                return <Movie 
+                key={movie.id} 
+                id={movie.id} 
+                year={movie.year} 
+                title={movie.title} 
+                summary={movie.summary} 
+                genres={movie.genres} 
+                poster={movie.medium_cover_image} />
+              })}
+            </MovieListSection>
+            <PaginationSection>
+              <ReactPaginate 
+              previousLabel={"<<"}  
+              nextLabel={">>"}
+              pageCount={totalCountOfPage}
+              onPageChange={changePage}
+              containerClassName={"paginationButton"}
+              previousLinkClassName={"previousButton"}
+              nextLinkClassName={"nextButton"}
+              disabledClassName={"paginationDiabled"}
+              activeClassName={"paginationActive"}/>
+            </PaginationSection>
+          </MovieSection>
+        </MainCardSection>
       </Section>
     )
 }
