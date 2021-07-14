@@ -12,6 +12,7 @@ export const FooterWrapper = styled.section`
         padding: 0 16px 48px;
         width: calc(100vw - 32px);
     }
+  
 `
 
 export const SocialIcons = styled.a`

@@ -7,9 +7,9 @@ export const MovieCard = styled.div`
     background-color: rgb(247 ,247 ,232);
     margin-bottom: 1em;
     padding-left: 1em;
-    min-height: 22em;
+    height: 22em;
     border-radius: 5px;
-    box-shadow: 0 8px 10px rgba(50, 50, 93, 0.85), 0 1px 3px rgba(0, 0, 0, 80);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 80);
 `
 
 export const MovieImg = styled.img`
@@ -19,7 +19,7 @@ export const MovieImg = styled.img`
     top: -2em;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 8px 10px rgba(50, 50, 93, 0.85), 0 1px 3px rgba(0, 0, 0, 80);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, .55);
 `
 
 export const MovieDataSet = styled.div`
@@ -31,10 +31,13 @@ export const MovieDataSet = styled.div`
     flex-direction: column;
     align-content: flex-start;
     justify-content: flex-start;
+    overflow: hidden;
 `
 
-export const MovieTitle = styled.h3`
-    flex: 3;
+export const MovieTitle = styled.div`
+    flex: 3.5;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 1.5em;
     font-weight: bold;
     min-height: 3em;
@@ -43,13 +46,14 @@ export const MovieTitle = styled.h3`
 `
 
 export const MovieGenreList = styled.ul`
-    flex: .5;
+    flex: 1.5;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin:0;
     padding:0;
+    overflow: hidden;
 `
 
 export const MovieGenre = styled.li`
@@ -57,11 +61,11 @@ export const MovieGenre = styled.li`
 `
 
 export const MovieYear = styled.h3`
-    flex: .5;
+    flex: 1;
     font-weight: bold;
 `
 
 export const MovieSummary = styled.p`
-    flex: 6;
+    flex: 4;
     padding-right: .5em;
 `

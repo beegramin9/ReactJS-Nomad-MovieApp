@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+// import 'bootstrap/dist/css/bootstrap.min.css'
+
 /* import Food from './1_propTypes.js'
 하고 ReactDOM.render에 <App>, <Food>를 둘 다 넣으려고 했지만
 작동하지 않는다. 왜?

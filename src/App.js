@@ -4,7 +4,7 @@ import React from "react"
 import {HashRouter, Route} from "react-router-dom";
 import About from "./routes/AboutTheProject";
 import Home from "./routes/Main";
-import Detail from "./routes/MovieDetail";
+import Detail from "./routes/Detail";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { ThemeProvider } from "styled-components";

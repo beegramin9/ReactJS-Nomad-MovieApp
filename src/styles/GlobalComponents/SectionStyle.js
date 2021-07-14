@@ -2,9 +2,6 @@ import styled from 'styled-components'
 
 export const Section = styled.section`
     display: ${(props) => props.grid? "grid":"column"};
-    /* grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 200px;
-    grid-template-rows: 200px; */
     flex-direction: ${(props) => props.row? "row": "column"};
     padding: ${(props) => props.nopadding? "0" : "32px 48px 0"};
     margin: 0 auto;
@@ -13,13 +10,13 @@ export const Section = styled.section`
     grid-gap: 5em;
 `
 
-
 export const MainCardSection = styled.section`
     display: flex;
     grid-gap: 1em;
     background-color: rgba(84, 86, 90, .45);
     margin-bottom: 1em;
     padding: 2em;
+    margin: 0 2em;
     border-radius: 5px;
     box-shadow: 0 13px 27px -5px rgba(0, 0, 0, 0.65),
     0 8px 16px -8px rgba(0, 0, 0, 0.6), 0 -6px 16px -6px rgba(0, 0, 0, .625);
@@ -33,9 +30,9 @@ export const IntroductionSection = styled.section`
     padding: 1em;
 `
 
-export const ProfileImage = styled.image`
+export const ProfileImageSection = styled.div`
     flex: 3.5;
-
+    text-align: center;
 `
 export const ProfileTextSection= styled.div`
     flex: 6.5;
@@ -54,21 +51,20 @@ export const ProfileTextContent= styled.div`
     font-size: 1.5em;
 `
 
-
-
-export const MovieSection = styled.section`
-    flex: 70%;
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-
-`
-
 export const MovieListSection = styled.section`
     flex: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5em;
+`
+
+export const MovieSection = styled.section`
+    position: relative;
+    flex: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+
 `
 
 export const PaginationSection = styled.section`

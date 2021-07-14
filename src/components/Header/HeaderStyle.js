@@ -1,61 +1,44 @@
 import styled from "styled-components"
 
 export const HeaderContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 2em;
+    display: flex;
     padding: 1rem;
     padding-top: 2rem;
-    align-content: center;
-    width: 100vw;
+    width: 95vw;
     height: 3vh;
+    
+    justify-content: space-between;
+    align-content: center;
+    
+    color: rgb(247 ,247 ,232);
+
+
+    font-family: 'NEXONFootballGothicLA1';
+
+    @font-face {
+    font-family: "NEXONFootballGothicLA1";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicLA1.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+    }
 `
 
 export const Div1 = styled.div`
-    grid-area: 1 / 1 / 2 / 3;
+    flex: 9;
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    color: white;
-    padding: 0 1rem;
+    padding: 0 1em;
+    font-size: 2em;
 `
 export const Div2 = styled.div`
-    grid-area: 1 / 3 / 2 / 7;
+    flex: 1;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
+    justify-content: space-between;
+    font-size: 1.5em;
     position: relative;
-    color: white;
-    top: 2.5px;
+    top: .25em;
 `
-export const Div3 = styled.div`
-  position: relative;
-  right: 25px;
-  bottom: 2.5px;
-  grid-area: 1 / 8 / 2 / 9;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 1rem;
-`;
 
 export const Span = styled.span`
-    font: ${props => props.theme.fonts.title};
     padding-left: .2em;
-    font-size: 2rem;
-    color: white;
-`
-
-export const SocialIcons = styled.a`
-    transition: 0.3s ease;
-    color: white;
-    border-radius: 50px;
-    padding: 8px;
-    &:hover {
-        background-color: #38234c;
-        transform: scale(1.2);
-        cursor: pointer;
-    }
 `

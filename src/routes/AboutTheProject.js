@@ -1,14 +1,18 @@
 import "./About.css"
 
 function About(props) {
-    console.log('props',props);
     return (
         <div className="about__container">
-            <span>
-              “Freedom is the freedom to say that two plus two make four. If that is
-              granted, all else follows.”
-            </span>
-            <span>− George Orwell, 1984</span>
+            <div className="about__card">
+                <span>
+                    {'\u00A0'}"This is a movie archive website which, in ther first place, was a free React tutorial offerered by Nomad Coder.
+                    Though, I have made a great improve and turned this to an abosolute gem with responsive layout with grid, flexbox and use of React Styled Component.
+                    Also, it follows React folder & file structure conventions which, in another aspect, have improved the scalability and sustainabilty of this gem."
+                </span>
+                <span>"Anyway, this is just awesome! please enjoy!"</span>
+                <span>- Project Completed, 14 - 07 - 2021</span>
+                <span>{'\u00A0'}{'\u00A0'}Wontae Choi</span>
+            </div>
         </div>
     )
 }

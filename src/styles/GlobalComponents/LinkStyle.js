@@ -8,5 +8,10 @@ export const StyledLink = styled(Link)`
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
     }
+    &:active {
+        background-color: rgba(34, 34, 34, .7);
+        transform: scale(1.3);
+        cursor: pointer;
+    }
 
 `

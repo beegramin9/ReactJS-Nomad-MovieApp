@@ -13,10 +13,10 @@ function Header() {
             <Div1>
                 <StyledLink to="/Home">
                     <a style={{ display: "flex", alignItems: "center", color:'white', marginBottom:"20px"}}>
-                        <RiMovie2Fill size="3rem"/>
+                        <RiMovie2Fill size="2rem"/>
                     </a>
                 </StyledLink>
-                <Span>MovieFlix</Span>
+                <Span>MovieChive</Span>
             </Div1>
             <Div2>
                 <StyledLink to="/About">
@@ -30,12 +30,12 @@ function Header() {
             각각 Movie 카드를 클릭하면 Movie 디테일을 들고 다른 페이지로 갈 수 있도록 */}
             {/* to의 path를 object로 교체할 수 있다. 주로 state에 추가 정보를 보낼 때 사용한다.
             다시 말하면, jQuery로 /about&id=1?bid=2019처럼 정보가 보이지 않고 숨겨서 보낼 수 있다.*/}
-            <StyledLink to={{
+            {/* <StyledLink to={{
                 pathname: "/movie",
                 state: {
                     fromNavigation : true
                 }
-            }}></StyledLink>
+            }}></StyledLink> */}
         </HeaderContainer>
         )
 

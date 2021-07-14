@@ -3,13 +3,14 @@ import defaultAxios from "axios";
 
 export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultAxios) => {
     const [totalMovieList, setTotalMovieList] = useState([]);
-    const [pageNumber, setPageNumber] = useState(1);
-
+    const [pageNumber, setPageNumber] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect( ()=>{
         const fetchMovieData = async () => {
             const response = await axiosInstance(options)
             const {data: {data: {movies : totalMovieList}}}= response
             setTotalMovieList(totalMovieList)
+            setIsLoading(false);
         }
         fetchMovieData();
     }, [])
@@ -25,5 +26,5 @@ export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultA
         setPageNumber(selected)
     }
 
-    return {currentMovieList, totalCountOfPage, changePage}
+    return {isLoading, currentMovieList, totalCountOfPage, changePage}
 } 

@@ -1,18 +1,20 @@
 /* 라우팅: 메인 페이지를 보여주는 파일 */
 import React from "react";
-
+import './Main.css';
 import Movie from '../components/Movie/Movie';
 import { useFetchMovieAndMakePagination } from "../hooks/useFetchMovieAndMakePagination";
 import { Section, MainCardSection, 
-  IntroductionSection, ProfileImage, ProfileTextSection, ProfileTextTitle, ProfileTextContent,
+  IntroductionSection, ProfileImageSection, ProfileTextSection, ProfileTextTitle, ProfileTextContent,
   MovieSection,  MovieListSection, PaginationSection } from "../styles/GlobalComponents/SectionStyle";
 import ReactPaginate from "react-paginate";
-import '../styles/GlobalComponents/PaginationStyle.css'
-// import { StyledPagination} from "../styles/GlobalComponents/PaginationStyle"
+import '../styles/GlobalComponents/PaginationStyle.css';
+import { BounceLoader } from 'react-spinners';
+import { LoadingWrapper } from '../styles/GlobalComponents/LoadingStyle';
+
 
 function Home() {
   const URL = "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
-  const  {currentMovieList, totalCountOfPage, changePage} = useFetchMovieAndMakePagination(URL)
+  const  {isLoading, currentMovieList, totalCountOfPage, changePage} = useFetchMovieAndMakePagination(URL)
 
 
   // loading도 받아와서 loading일때는 부트스트랩 로딩 아이콘을 가져와서 쓸 수 있도록 해보자
@@ -23,12 +25,24 @@ function Home() {
       <Section grid row>
         <MainCardSection>
           <IntroductionSection>
-            <ProfileImage src="/images/profile.jpg" alt="picture of Wontae smiling"/>
+            <ProfileImageSection>
+              <img className="profile-picture" src={process.env.PUBLIC_URL + '/images/profile.jpg'} alt="picture of Wontae smiling"/>
+            </ProfileImageSection> 
             <ProfileTextSection>
-              <ProfileTextTitle>Wontae's Moive Archive</ProfileTextTitle>
-              <ProfileTextContent>Where content should be</ProfileTextContent>
+              <ProfileTextTitle>Wontae's Movie Archive</ProfileTextTitle>
+              <ProfileTextContent>{'\u00A0'} Films in my opinion are made to entertain us. 
+                                  But, that is not just their sole purpose. 
+                                  They are made to make us think, feel, laugh and cry.
+                                  They take us to places where we cannot go and let us experience the things we cannot do in real life. </ProfileTextContent>
             </ProfileTextSection>
           </IntroductionSection>
+          {isLoading ?
+              <MovieSection>
+                <LoadingWrapper>
+                  <BounceLoader size={48} color='rgb(247, 247, 232)'/>
+                </LoadingWrapper>
+              </MovieSection>
+              :
           <MovieSection>
             <MovieListSection>
               {currentMovieList.map(movie => {
@@ -55,22 +69,13 @@ function Home() {
               activeClassName={"paginationActive"}/>
             </PaginationSection>
           </MovieSection>
+          } 
         </MainCardSection>
       </Section>
     )
 }
-/* {arrayOfMovieData.map(movie => {
-  return <Movie 
-  key={movie.id} 
-  id={movie.id} 
-  year={movie.year} 
-  title={movie.title} 
-  summary={movie.summary} 
-  genres={movie.genres} 
-  poster={movie.medium_cover_image} />
-})} */
 
-
+export default Home;
 // class Home extends React.Component {
 //   state = {
 //     /* App이 실행(Mount)됨을 알리기 위해 isLoading이란 변수 */
@@ -155,5 +160,3 @@ function Home() {
 //     )
 //   }  
 // }
-
-export default Home;

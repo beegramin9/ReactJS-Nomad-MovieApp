@@ -8,13 +8,13 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <SocialIcons href="https://github.com/beegramin9/ReactJS-Nomad-MovieApp">
-                <AiFillGithub size="3rem"/>
+                <AiFillGithub size="2rem"/>
             </SocialIcons>
             <SocialIcons href="https://linkedin.com/in/wontae-choi-917259209">
-              <AiFillLinkedin size="3rem"/>
+              <AiFillLinkedin size="2rem"/>
             </SocialIcons>
             <SocialIcons href="https://instagram.com/beestron9">
-              <AiFillInstagram size="3rem"/>
+              <AiFillInstagram size="2rem"/>
             </SocialIcons>
         </FooterWrapper>
     )
