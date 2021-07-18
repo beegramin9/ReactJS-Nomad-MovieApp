@@ -6,6 +6,8 @@ This is to announce the completion of making an movie list app with ReactJS. Thi
 The current stable version is v0.0.1.
 
 # Overview
+![React-gif](https://user-images.githubusercontent.com/58083434/126056798-e5040fef-fc25-4235-a3ea-42ee52e04775.gif)
+
 - Component<br>
 Function that returns JSX, a combination of HTML and JS
 ``` js
