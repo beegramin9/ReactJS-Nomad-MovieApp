@@ -5,6 +5,10 @@
 This is to announce the completion of making an movie list app with ReactJS. This app runs through the basics of React.
 The current stable version is v0.0.1.
 
+This project fetchs an movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom useFetchAPIandPagination Hook, styled components and HashRouters, loading spinner. The social media icons at the header and footer leads to my social accounts, and About page contains a prologue of this project.
+
+
+
 # Overview
 ![React-gif](https://user-images.githubusercontent.com/58083434/126056798-e5040fef-fc25-4235-a3ea-42ee52e04775.gif)
 
