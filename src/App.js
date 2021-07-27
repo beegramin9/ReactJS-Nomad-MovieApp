@@ -23,6 +23,7 @@ function App() {
   
       {/* 어떤 url으로 갈지, 어떤 파일의 리액트 컴포넌트를 불러올지 props이 필요함 */}
       {/* 여기서 받은 Detail Component를 Detail.js에서 사용 가능 */}
+      <Route path="/" exact={true} component={Home}/>
       <Route path="/home" exact={true} component={Home}/>
       {/* /home과 /home/1이 겹치는걸 막으려면 exact url 아니면 안 띄운다는 뜻의 exact={true} 주면 됨 */}
       <Route path="/about" exact={true} component={About}/>
