@@ -15,14 +15,15 @@ function Movie({id, year, title, summary, poster, genres}) {
         <MovieCard>
             <MovieImg src={poster} alt={title} title={title}/>
             <MovieDataSet>
-                <MovieTitle>{title}</MovieTitle>
+                <MovieTitle>{title.length > 30 ? title.slice(0, 30) + '...' : title}</MovieTitle>
                 <MovieGenreList>
                 {genres.map ( (genre, index) => (
                     <MovieGenre key={index}>{genre}</MovieGenre>
                 ))}
                 </MovieGenreList>
                 <MovieYear>{year}</MovieYear>
-                <MovieSummary>{summary.slice(0, 140)}...</MovieSummary>
+                {/* 삼항연산자 로직...? */}
+                <MovieSummary>{summary.length > 150 ? summary.slice(0, 150) + '...' : summary}</MovieSummary>
             </MovieDataSet>
         </MovieCard>
     </StyledLink>   

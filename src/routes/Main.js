@@ -61,6 +61,9 @@ function Home() {
               previousLabel={"<<"}  
               nextLabel={">>"}
               pageCount={totalCountOfPage}
+              pageRangeDisplayed={2} /* 선택된 페이지 양옆 총 2개, 즉 각 1개씩 */
+              marginPagesDisplayed={1} /* 양끝 1개씩, 즉 최초와 최후는 항상 보이게 */
+              breakLabel={'-'} 
               onPageChange={changePage}
               containerClassName={"paginationButton"}
               previousLinkClassName={"previousButton"}
