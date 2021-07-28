@@ -13,9 +13,22 @@ export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultA
             setIsLoading(false);
         }
         fetchMovieData();
-    }, [])
+    }, []);
 
-    const numOfMoviePerPage = 4
+    let numOfMoviePerPage;
+    /* useEffect로 해야되나보다 */
+    window.addEventListener("resize", () => {
+        const screenWidth  = window.innerWidth;
+        console.log(screenWidth);
+        if (screenWidth > 960) {
+            numOfMoviePerPage = 4;
+        } else if (screenWidth > 640) {
+            numOfMoviePerPage = 2;
+        } else {
+            numOfMoviePerPage = 1;
+        }
+    });
+
     const numOfMovieDisplayed = pageNumber * numOfMoviePerPage
 
     const currentMovieList = totalMovieList.slice(numOfMovieDisplayed, numOfMovieDisplayed+numOfMoviePerPage)

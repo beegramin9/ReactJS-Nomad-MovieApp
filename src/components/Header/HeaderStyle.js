@@ -37,6 +37,7 @@ export const Div2 = styled.div`
     font-size: 1.5em;
     position: relative;
     top: .25em;
+    gap: 1em;
 `
 
 export const Span = styled.span`

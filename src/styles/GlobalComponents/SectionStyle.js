@@ -56,6 +56,12 @@ export const MovieListSection = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5em;
+
+    /* responsive 시작! */
+    @media ${(props) => props.theme.breakpoints.md} {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const MovieSection = styled.section`

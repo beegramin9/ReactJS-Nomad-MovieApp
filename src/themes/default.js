@@ -15,9 +15,8 @@ const theme = {
     // Breakpoints for responsive design
     breakpoints: {
       sm: 'screen and (max-width: 540px)',
-      md: 'screen and (max-width: 920px)',
-      lg: 'screen and (max-width: 1024px)',
-      xl: 'screen and (max-width: 1280px)'
+      md: 'screen and (max-width: 960px)',
+      lg: 'screen and (max-width: 1024px)'
     },
   }
   

@@ -10,6 +10,11 @@ export const MovieCard = styled.div`
     height: 22em;
     border-radius: 5px;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 80);
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        width: 80%;
+    }
+
 `
 
 export const MovieImg = styled.img`

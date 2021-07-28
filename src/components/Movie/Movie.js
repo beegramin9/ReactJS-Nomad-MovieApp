@@ -23,7 +23,7 @@ function Movie({id, year, title, summary, poster, genres}) {
                 </MovieGenreList>
                 <MovieYear>{year}</MovieYear>
                 {/* 삼항연산자 로직...? */}
-                <MovieSummary>{summary.length > 150 ? summary.slice(0, 150) + '...' : summary}</MovieSummary>
+                <MovieSummary>{summary.length > 100 ? summary.slice(0, 100) + '...' : summary}</MovieSummary>
             </MovieDataSet>
         </MovieCard>
     </StyledLink>   
