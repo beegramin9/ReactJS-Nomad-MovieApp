@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ReactJS-Nomad-MovieApp/static/css/main.a4970991.chunk.css",
+    "main.js": "/ReactJS-Nomad-MovieApp/static/js/main.27da7370.chunk.js",
+    "main.js.map": "/ReactJS-Nomad-MovieApp/static/js/main.27da7370.chunk.js.map",
+    "runtime-main.js": "/ReactJS-Nomad-MovieApp/static/js/runtime-main.b434f5b5.js",
+    "runtime-main.js.map": "/ReactJS-Nomad-MovieApp/static/js/runtime-main.b434f5b5.js.map",
+    "static/js/2.47f94d65.chunk.js": "/ReactJS-Nomad-MovieApp/static/js/2.47f94d65.chunk.js",
+    "static/js/2.47f94d65.chunk.js.map": "/ReactJS-Nomad-MovieApp/static/js/2.47f94d65.chunk.js.map",
+    "index.html": "/ReactJS-Nomad-MovieApp/index.html",
+    "static/css/main.a4970991.chunk.css.map": "/ReactJS-Nomad-MovieApp/static/css/main.a4970991.chunk.css.map",
+    "static/js/2.47f94d65.chunk.js.LICENSE.txt": "/ReactJS-Nomad-MovieApp/static/js/2.47f94d65.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b434f5b5.js",
+    "static/js/2.47f94d65.chunk.js",
+    "static/css/main.a4970991.chunk.css",
+    "static/js/main.27da7370.chunk.js"
+  ]
+}
