@@ -37,6 +37,11 @@ export const StyledPagination = styled(ReactPaginate)`
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 760px) {
+  .paginationButton {
+    height: 32px;
+  }
+}
 
 .paginationButton a {
   padding: 10px;

@@ -30,10 +30,9 @@ function Home() {
             </ProfileImageSection> 
             <ProfileTextSection>
               <ProfileTextTitle>Wontae's Movie Archive</ProfileTextTitle>
-              <ProfileTextContent>{'\u00A0'} Films in my opinion are made to entertain us. 
-                                  But, that is not just their sole purpose. 
-                                  They are made to make us think, feel, laugh and cry.
-                                  They take us to places where we cannot go and let us experience the things we cannot do in real life. </ProfileTextContent>
+              <ProfileTextContent>{'\u00A0'}
+                                  Films are made to make us think, feel, laugh and cry.
+                                  Films take us to places where we cannot go and let us experience the things we cannot do in real life. </ProfileTextContent>
             </ProfileTextSection>
           </IntroductionSection>
           {isLoading ?

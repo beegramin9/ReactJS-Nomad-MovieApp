@@ -38,6 +38,7 @@ class Detail extends React.Component {
             return (
                 <Section grid row>
                     <MainCardSection>
+                        { window.innerWidth > 730 ?
                         <IntroductionSection>
                             <ProfileImageSection>
                             <img className="profile-picture" src={process.env.PUBLIC_URL + '/images/profile.jpg'} alt="picture of Wontae smiling"/>
@@ -49,7 +50,9 @@ class Detail extends React.Component {
                                                 They are made to make us think, feel, laugh and cry.
                                                 They take us to places where we cannot go and let us experience the things we cannot do in real life. </ProfileTextContent>
                             </ProfileTextSection>
-                        </IntroductionSection>
+                        </IntroductionSection> :
+                        ""
+                        }
                         <MovieSection>
                             <DetailCard>
                                 <DetailImg src={location.state.poster}/> 

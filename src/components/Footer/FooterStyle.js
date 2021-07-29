@@ -3,14 +3,12 @@ import styled from 'styled-components'
 export const FooterWrapper = styled.section`
     display: flex;
     justify-content: center;
-	width: calc(100vw - 96px);
-    max-width: 1040px;
-    padding: 2rem 48px 40px;
-    margin: 3rem auto 1rem;
+	width: 90%;
+    padding: 0 48px 40px;
+    margin: 1rem auto 1rem;
     box-sizing: content-box;
     @media ${props => props.theme.breakpoints.sm} {
         padding: 0 16px 48px;
-        width: calc(100vw - 32px);
     }
   
 `

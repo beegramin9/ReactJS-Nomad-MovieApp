@@ -13,6 +13,7 @@ export const MovieCard = styled.div`
 
     @media ${(props) => props.theme.breakpoints.md} {
         width: 80%;
+        margin: 0 auto;
     }
 
 `

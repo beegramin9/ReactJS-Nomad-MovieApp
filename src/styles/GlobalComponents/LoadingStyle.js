@@ -8,4 +8,11 @@ export const LoadingWrapper = styled.div`
     min-height: 58.5em;
     justify-content: center;
     align-content: center;
+    @media ${(props) => props.theme.breakpoints.sm} {
+        display: flex;
+        flex-direction: row;
+        min-height: 30em;
+        justify-content: center;
+        align-self: center;
+    }
 `

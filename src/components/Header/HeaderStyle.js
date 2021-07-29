@@ -2,10 +2,9 @@ import styled from "styled-components"
 
 export const HeaderContainer = styled.div`
     display: flex;
-    padding: 1rem;
-    padding-top: 2rem;
-    width: 95vw;
-    height: 3vh;
+    padding: 2rem 1rem 1rem;
+    width: 95%;
+    height: 2.5rem;
     
     justify-content: space-between;
     align-content: center;
@@ -22,10 +21,12 @@ export const HeaderContainer = styled.div`
     font-weight: normal;
     font-style: normal;
     }
+    @media ${(props) => props.theme.breakpoints.sm} {
+    }
 `
 
 export const Div1 = styled.div`
-    flex: 9;
+    flex: 8;
     display: flex;
     padding: 0 1em;
     font-size: 2em;
@@ -33,8 +34,8 @@ export const Div1 = styled.div`
 export const Div2 = styled.div`
     flex: 1;
     display: flex;
-    justify-content: space-between;
     font-size: 1.5em;
+    justify-content: space-between;
     position: relative;
     top: .25em;
     gap: 1em;
