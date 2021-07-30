@@ -119,10 +119,13 @@ export const PaginationSection = styled.section`
     display: flex;
     justify-content: flex-end;
     padding-top: 2em;
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        padding: 2em 2rem 0 0;
+    }
     @media ${(props) => props.theme.breakpoints.sm} {
-        padding: 2em 0 0;
+        padding: 2em 3rem 0 0;
         display: flex;
-        flex-direction: row;
         justify-content: center;
     }
 `

@@ -37,9 +37,11 @@ export const StyledPagination = styled(ReactPaginate)`
   display: flex;
   justify-content: flex-end;
 }
+
 @media (max-width: 760px) {
   .paginationButton {
-    height: 32px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -52,6 +54,11 @@ export const StyledPagination = styled(ReactPaginate)`
   cursor: pointer;
 }
 
+@media (max-width: 760px) {
+  .paginationButton a {
+    padding: 6px;
+  }
+}
 .paginationButton a:hover {
   color: white;
   background-color: rgb(84, 86, 90);
