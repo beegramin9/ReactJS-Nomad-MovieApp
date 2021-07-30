@@ -13,7 +13,7 @@ export const DetailCard = styled.div`
     border-radius: 5px;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 80);
     @media ${(props) => props.theme.breakpoints.sm} {
-        width: 95%;
+        width: 100%;
         height: 51em;
     }
 `
@@ -32,10 +32,11 @@ export const DetailDataSet = styled.div`
     margin: 0;
     padding: 0;
     flex-direction: column;
-    justify-content: space-between;
+    /* 아 확실하네. 이게 column을 줘버리면 justify랑 align 방향이 바껴버리네.justify-items.justify-items. */
+    // justify-content: space-between;
     align-content: flex-start;
     overflow: auto;
-
+    gap: 1em;
     &::-webkit-scrollbar {
         margin-right: -10px;
         width: 10px;
@@ -57,7 +58,6 @@ export const DetailDataSet = styled.div`
 
 
 export const DetailTitle = styled.div`
-    flex: 3;
     display: flex;
     flex-wrap: wrap;
     font-size: 3em;
@@ -67,14 +67,21 @@ export const DetailTitle = styled.div`
 `
 
 export const DetailGenreList = styled.ul`
-    flex: 1;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin:0;
     padding:0;
-    overflow: hidden;
+    // height: 4.5em;
+
+
+    // text-overflow: ellipsis;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 3; /* 라인수 */
+    // -webkit-box-orient: vertical;
+    // word-wrap:break-word; 
+    // height: 3em;
 `
 
 export const DetailGenre = styled.li`
@@ -84,13 +91,11 @@ export const DetailGenre = styled.li`
 `
 
 export const DetailYear = styled.h3`
-    flex: 1;
     font-weight: bold;
     font-size: 2em;
 `
 
 export const DetailSummary = styled.p`
-    flex: 4;
     padding-right: .5em;
     font-size: 1.5em;
     

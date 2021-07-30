@@ -25,9 +25,10 @@ export const MainCardSection = styled.section`
     0 8px 16px -8px rgba(0, 0, 0, 0.6), 0 -6px 16px -6px rgba(0, 0, 0, .625);
     @media ${(props) => props.theme.breakpoints.sm} {
         flex-direction: column;
-        align-content: content;
+        align-items: center;
+        justify-items: center;
         width: 25rem;
-        padding: 0 2px;
+        padding: 0 25px 0 0px;
     }
    
 `
