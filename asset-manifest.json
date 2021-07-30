@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/movie_app_2020/static/css/main.261afc59.chunk.css",
-    "main.js": "/movie_app_2020/static/js/main.13ff18df.chunk.js",
-    "main.js.map": "/movie_app_2020/static/js/main.13ff18df.chunk.js.map",
-    "runtime-main.js": "/movie_app_2020/static/js/runtime-main.3cbc91a9.js",
-    "runtime-main.js.map": "/movie_app_2020/static/js/runtime-main.3cbc91a9.js.map",
-    "static/js/2.95c69c71.chunk.js": "/movie_app_2020/static/js/2.95c69c71.chunk.js",
-    "static/js/2.95c69c71.chunk.js.map": "/movie_app_2020/static/js/2.95c69c71.chunk.js.map",
-    "index.html": "/movie_app_2020/index.html",
-    "static/css/main.261afc59.chunk.css.map": "/movie_app_2020/static/css/main.261afc59.chunk.css.map",
-    "static/js/2.95c69c71.chunk.js.LICENSE.txt": "/movie_app_2020/static/js/2.95c69c71.chunk.js.LICENSE.txt"
+    "main.css": "/ReactJS-Nomad-MovieApp/static/css/main.261afc59.chunk.css",
+    "main.js": "/ReactJS-Nomad-MovieApp/static/js/main.118564a6.chunk.js",
+    "main.js.map": "/ReactJS-Nomad-MovieApp/static/js/main.118564a6.chunk.js.map",
+    "runtime-main.js": "/ReactJS-Nomad-MovieApp/static/js/runtime-main.475dfe0f.js",
+    "runtime-main.js.map": "/ReactJS-Nomad-MovieApp/static/js/runtime-main.475dfe0f.js.map",
+    "static/js/2.cf056e9a.chunk.js": "/ReactJS-Nomad-MovieApp/static/js/2.cf056e9a.chunk.js",
+    "static/js/2.cf056e9a.chunk.js.map": "/ReactJS-Nomad-MovieApp/static/js/2.cf056e9a.chunk.js.map",
+    "index.html": "/ReactJS-Nomad-MovieApp/index.html",
+    "static/css/main.261afc59.chunk.css.map": "/ReactJS-Nomad-MovieApp/static/css/main.261afc59.chunk.css.map",
+    "static/js/2.cf056e9a.chunk.js.LICENSE.txt": "/ReactJS-Nomad-MovieApp/static/js/2.cf056e9a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3cbc91a9.js",
-    "static/js/2.95c69c71.chunk.js",
+    "static/js/runtime-main.475dfe0f.js",
+    "static/js/2.cf056e9a.chunk.js",
     "static/css/main.261afc59.chunk.css",
-    "static/js/main.13ff18df.chunk.js"
+    "static/js/main.118564a6.chunk.js"
   ]
 }
