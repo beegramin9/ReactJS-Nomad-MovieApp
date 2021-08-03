@@ -6,12 +6,15 @@ import { MovieCard, MovieImg, MovieDataSet, MovieTitle,
     MovieGenreList, MovieGenre, MovieYear, MovieSummary } from './MovieStyle';
 
 function Movie({id, year, title, summary, poster, genres}) {
+    
     return (
         /* 전체를 Link로 감아서 각 movie의 디테일로 갈 수 있도록 */
     <StyledLink to={ {pathname:`./movie/${id}`,
                     /* props를 준거야, object처럼 생겼잖아 */
                     state: {year, title, summary, poster, genres} /* ES6 */
-        }}>  
+        }}
+        onContextMenu={() => false}
+        onSelectStart={() => false}>  
         <MovieCard>
             <MovieImg src={poster} alt={title} title={title}/>
             <MovieDataSet>
