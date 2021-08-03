@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ReactJS-Nomad-MovieApp/static/css/main.261afc59.chunk.css",
-    "main.js": "/ReactJS-Nomad-MovieApp/static/js/main.e3d26665.chunk.js",
-    "main.js.map": "/ReactJS-Nomad-MovieApp/static/js/main.e3d26665.chunk.js.map",
+    "main.js": "/ReactJS-Nomad-MovieApp/static/js/main.b43a17a9.chunk.js",
+    "main.js.map": "/ReactJS-Nomad-MovieApp/static/js/main.b43a17a9.chunk.js.map",
     "runtime-main.js": "/ReactJS-Nomad-MovieApp/static/js/runtime-main.475dfe0f.js",
     "runtime-main.js.map": "/ReactJS-Nomad-MovieApp/static/js/runtime-main.475dfe0f.js.map",
     "static/js/2.cf056e9a.chunk.js": "/ReactJS-Nomad-MovieApp/static/js/2.cf056e9a.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.475dfe0f.js",
     "static/js/2.cf056e9a.chunk.js",
     "static/css/main.261afc59.chunk.css",
-    "static/js/main.e3d26665.chunk.js"
+    "static/js/main.b43a17a9.chunk.js"
   ]
 }
