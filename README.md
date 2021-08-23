@@ -1,7 +1,3 @@
-> *The branch that corresponds the current Gif below is "custom"* <br/>
-> *개요 Gif파일이 보여주는 작업물은 "custom" 브랜치에 있습니다! *
-<hr/>
-
 ## Project Status
 ![Generic badge](https://img.shields.io/badge/build-passing-green.svg)
 
