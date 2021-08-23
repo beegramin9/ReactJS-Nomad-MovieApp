@@ -1,95 +1,125 @@
-# Latest Release (2021/06/28)
+> *The branch that corresponds the current Gif below is "custom"* <br/>
+> *개요 Gif파일이 보여주는 작업물은 "custom" 브랜치에 있습니다! *
+<hr/>
 
+## Project Status
 ![Generic badge](https://img.shields.io/badge/build-passing-green.svg)
 
-This is to announce the completion of making an movie list app with ReactJS. This app runs through the basics of React.
-The current stable version is v0.0.1.
-
-This project fetchs an movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom useFetchAPIandPagination Hook, styled components and HashRouters, loading spinner. The social media icons at the header and footer leads to my social accounts, and About page contains a prologue of this project.
-
-
-
-# Overview
+## Overview
 ![React-gif](https://user-images.githubusercontent.com/58083434/126056798-e5040fef-fc25-4235-a3ea-42ee52e04775.gif)
 
-- Component<br>
-Function that returns JSX, a combination of HTML and JS
+## Technology Stack
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>&nbsp;
+<img src='https://img.shields.io/badge/StyledComponents-DB7093?style=flat-square&logo=Styled-Components&logoColor=white'/></a>&nbsp;
+
+## Outline
+&nbsp;This project fetchs an movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom useFetchAPIandPagination Hook, styled components and HashRouters, loading spinner. The social media icons at the header and footer leads to my social accounts, and About page contains a prologue of this project.
+<br/><br/>
+&nbsp;영화 JSON 데이터 API를 받아와 소개하는 웹서비스입니다. custom hook을 사용하였는데, Axios로 API에서 받아온 Json 데이터로 Pagination 기능을 구현했습니다. 특히 API를 받아올 때 비동기적으로 받아오는 Axios를 고려해 loading spinner로 사용자들의 비어있는 대기시간을 채웠습니다. Conventional React 폴더 구조를 따라 안정성 있고(sustainable)/확장(scalable) 가능합니다. 또한 styled-components와 media query를 이용하여 반응형 UI를 구현했습니다. 각각 스마트폰, 패드, 모니터 스크린에 맞춤인 UI를 가지고 있습니다.
+
+## Main Feature Code
+- React Routing <br/>
+> (/src/App.js)
+> 리액트 라우팅은 페이지를 넘어가도 새로고침이 되지 않는 웹앱을 구현할 수 있게 해줍니다.
 ``` js
-/* function App() contains the fathers of all father components, frome which branches the whole application upwards */
-function App() { 
-  return <Food>
-  </Food>
-  /* Food also can have many child components, working as if routers. */
-}
-
-```
-
-```js
-function Food({fav, name, picture, rating}) {
-/* receiving properties from father component */
+function App() {
   return (
-    <div>
-      <h1>I like {fav}</h1>
-      <h2>I like {name}</h2>
-      <img src={picture} alt={name} />
-      <h4>{rating}/5.0</h4>
-    </div>
-  )
-  /* Any JS code such as array, boolean is writen within braces. HTML code is writen without braces.*/
-}
+  <ThemeProvider theme={theme}> // default theme은 fonts, colors, breakpoints(반응형)등을 포함합니다
+    <HashRouter>
+      <GlobalStyle/>
+        <Header/>
+        <Route path="/" exact={true} component={Home}/> // Switch와 exact props를 사용하면 정확하게 매치되는 라우터가 아니면 라우팅을 하지 않습니다.
+        <Route path="/home" exact={true} component={Home}/> // 페이지와 Component를 매칭하는 방법입니다. props로 전달합니다.
+        <Route path="/about" exact={true} component={About}/>
+        <Route path="/movie/:id" exact={true} component={Detail}/>
+      <Footer/>
+    </HashRouter>
+  </ThemeProvider>
+)}
+
+export default App;
 ```
 
-- Props, Properties
+- Custom Hook <br/>
+> (/src/hooks/useFetchMovieAndMakePagination.js) <br/>
+> npm react-paginate 라이브러리를 사용합니다. 
 ```js
-<Food fav="kimchi" 
-      something={true}
-      papapa={['hello',1,2,3,4]}/>;
-      /* The structure above quite resembles HTML and how HTML containing class is constructed. 
-          The class-resembling elements are called 'props' as in properties. */
-```
-- Proptypes<br>
-Runtime type checking for React props and similar objects<br>
-```js
-Food.propTypes = {
-  name: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
-  rating: PropTypes.number
+import defaultAxios from "axios";
+
+export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultAxios) => {
+    const [totalMovieList, setTotalMovieList] = useState([]);
+    const [pageNumber, setPageNumber] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
+    // numOfMoviePerPage: 모니터 스크린 기준 한 페이지당 Movie Card
+    // 반응형으로 하려면 스크린 사이즈마다 변하는 Dynamic state니까 useState로 관리해야 합니다.
+    const [numOfMoviePerPage, setNumOfMoviePerPage] = useState(4); 
+
+    useEffect( ()=>{
+        // Api fetching은 비동기 작업이기 때문에 useEffect훅에서도 비동기로 사용해야 합니다. 
+        const fetchMovieData = async () => {
+            const response = await axiosInstance(options)
+            const {data: {data: {movies : totalMovieList}}}= response
+            setTotalMovieList(totalMovieList)
+            setIsLoading(false);
+        }
+        fetchMovieData();
+    }, []);
+   
+    useEffect( () => {
+        // 맨 처음 렌더링, 즉 resize가 일어나지 않았을 때 setNumOfMoviePerPage
+        const screenWidth  = window.innerWidth;
+        if (screenWidth < 730) {
+            setNumOfMoviePerPage(1);
+        } else if (screenWidth < 960) {
+            setNumOfMoviePerPage(2);
+        } else {
+            setNumOfMoviePerPage(4);
+        }
+        // 맨 처음 렌더링 이후, resize가 일어날 때마다 setNumOfMoviePerPage
+        window.addEventListener('resize', () => {
+            const screenWidth  = window.innerWidth;
+            if (screenWidth < 730) {
+                setNumOfMoviePerPage(1);
+            } else if (screenWidth < 960) {
+                setNumOfMoviePerPage(2);
+            } else {
+                setNumOfMoviePerPage(4);
+            }
+        });
+    }, []);
+
+    const numOfMovieDisplayed = pageNumber * numOfMoviePerPage
+    const currentMovieList = totalMovieList.slice(numOfMovieDisplayed, numOfMovieDisplayed+numOfMoviePerPage)
+    const totalCountOfPage = Math.ceil(totalMovieList.length / numOfMoviePerPage)
+
+    const changePage = ({selected}) => {
+        //  react-paginate has a prop named Selected
+        setPageNumber(selected)
+    }
+    
+    return {isLoading, currentMovieList, totalCountOfPage, changePage}
 } 
 ```
 
-- Destructuring <br>
+- Styled-components & @media <br/>
+> (/src/components/Movie/MovieStyle.js)
+> 스마트폰, 패드, 모니터 스크린에 맞춘 반응형 UI를 구현합니다.
 ```js
-state = {
-    name: 'Wontae',
-    email: 'beestron9@gmail.com'
-}
+import styled from "styled-components"
 
-let reactFunction = () => {
-    const {name, email} = state
-    /* deconstruct state, not allocating them to any variables 
-    keys 'name', 'email' return the values, 'Wontae', 'beestron9@gmail.com'*/
-}
-
-props = {
-      hello: 'hello'
-}
-
-let renderComponent = ({hello}) => {
-    console.log(`render ${hello}`);
-}
-
+export const MovieCard = styled.div`
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 2fr 5fr;
+    background-color: rgb(247 ,247 ,232);
+    margin-bottom: 1em;
+    padding-left: 1em;
+    height: 22em;
+    border-radius: 5px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 80);
+    @media ${(props) => props.theme.breakpoints.md} {
+        width: 80%;
+        margin: 0 auto;
+    }
+`
 ```
-- About State, <br>
-can find some reference at learn_state.js, src
-
-# Technology Stack
-
-&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a>&nbsp;
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>&nbsp;
-<img src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
-
-<img src="https://img.shields.io/badge/Framer-df0eb1?style=flat-square&logo=Framer&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/Gatsby-663399?style=flat-square&logo=Gatsby&logoColor=white"/></a>
-# Features
