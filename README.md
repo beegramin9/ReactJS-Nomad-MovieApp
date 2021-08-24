@@ -99,7 +99,7 @@ export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultA
 ```
 
 - Styled-components & @media <br/>
-> (/src/components/Movie/MovieStyle.js)등 <br/>
+> (/src/components/Movie/MovieStyle.js 모든 styled component에 적용) <br/>
 > 스마트폰, 패드, 모니터 스크린에 맞춘 반응형 UI를 구현합니다.
 ```js
 import styled from "styled-components"
