@@ -16,7 +16,7 @@
 
 ## Main Feature Code
 - React Routing <br/>
-> (/src/App.js)
+> (/src/App.js) <br/>
 > 리액트 라우팅은 페이지를 넘어가도 새로고침이 되지 않는 웹앱을 구현할 수 있게 해줍니다.
 ``` js
 function App() {
@@ -99,7 +99,7 @@ export const useFetchMovieAndMakePagination = (options, axiosInstance = defaultA
 ```
 
 - Styled-components & @media <br/>
-> (/src/components/Movie/MovieStyle.js)
+> (/src/components/Movie/MovieStyle.js) <br/>
 > 스마트폰, 패드, 모니터 스크린에 맞춘 반응형 UI를 구현합니다.
 ```js
 import styled from "styled-components"
