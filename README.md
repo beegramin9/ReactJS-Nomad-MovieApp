@@ -1,6 +1,6 @@
 ## Project Status
 ![Generic badge](https://img.shields.io/badge/build-passing-green.svg)
-<br/> [Check out the actual website!](https://beegramin9.github.io/ReactJS-Nomad-MovieApp/#/). try!
+<br/> [Check out the actual website!](https://beegramin9.github.io/ReactJS-Nomad-MovieApp/#/) try!
 
 ## Overview
 ![React-gif](https://user-images.githubusercontent.com/58083434/126056798-e5040fef-fc25-4235-a3ea-42ee52e04775.gif)
